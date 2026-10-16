@@ -37,6 +37,8 @@ Working rules for this project. Read `README.md` for the folder layout.
 - Repeated code goes into `common/`, but only when two experiments really use the same thing. Prefer a plain
   function with explicit arguments over a class or a configuration layer.
 - Record where adapted code comes from (repository, file, commit) in a comment at the top of the module.
+- Every setting gets a comment where it is declared: what it means, where it comes from (paper, repository file),
+  and when and why a value was decided. The settings of an experiment then read like its spec.
 
 ## Running experiments
 
@@ -67,11 +69,16 @@ Working rules for this project. Read `README.md` for the folder layout.
 
 ## Documentation
 
+- No jargon a first-time reader would not understand: conditions, rules and files get descriptive names
+  (`activation`, `question_only`, `prompt_as_text`), never letters or abbreviations.
+- Every result needs a plot before it is reported. Plots are drawn large: big fonts, tight axis limits, legends
+  inside the axes, legible when shrunk.
 - Each experiment README reads in under three minutes: the question and its one-line answer, Setup, Results
   (tables and figures), Notes, Run, Files. Details are understood from the code, not the README.
 - Write the settings a reader needs to reproduce the result. Do not write the values actually used for anything
   else (machine, GPU index, timings, paths outside the project).
-- The root README states what was tested, the results with tables and figures, and how to reproduce.
+- The root README opens with a table of the experiments (Experiment | Question | Answer), then states the results
+  with tables and figures, and how to reproduce.
 - Keep every number in a README traceable to a file under `results/`.
 
 ## Working with Claude

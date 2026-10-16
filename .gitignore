@@ -5,9 +5,10 @@
 .cache
 __pycache__/
 
-# experiment outputs: everything under results/data except the placeholder; figures stay tracked
-experiments/*/results/*
-!experiments/*/results/figures/
-!experiments/*/results/data/
-experiments/*/results/data/*
+# experiment outputs: everything under results/ except the figures, also under a RESULTS_SUBDIR (results/<name>/)
+experiments/*/results/**
+!experiments/*/results/*/
+!experiments/*/results/figures/**
+!experiments/*/results/*/figures/
+!experiments/*/results/*/figures/**
 !experiments/*/results/data/.gitkeep
